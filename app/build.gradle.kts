@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     id("com.google.dagger.hilt.android")
     kotlin("kapt")
+    alias(libs.plugins.androidx.navigation.safe.args)
 }
 
 android {
@@ -49,6 +50,10 @@ dependencies {
     //DaggerHilt
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
+
+    //Safeargs
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
