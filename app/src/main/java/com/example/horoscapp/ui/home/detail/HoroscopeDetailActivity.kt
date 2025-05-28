@@ -34,10 +34,10 @@ class HoroscopeDetailActivity : AppCompatActivity() {
     }
 
     private fun initUI() {
-        InitUIState()
+        initUIState()
     }
 
-    private fun InitUIState() {
+    private fun initUIState() {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 horoscopeDetailViewModel.state.collect {
