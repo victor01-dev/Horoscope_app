@@ -11,7 +11,6 @@ data class PredictionResponse (
 ) {
     fun toDomain(): PredictionModel {
         return PredictionModel(
-            date = date,
             horoscope = horoscope,
             sign = sign,
         )

@@ -20,6 +20,7 @@
         android:id="@+id/ivBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:padding="24dp"
         android:src="@drawable/ic_back"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,8 +34,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivDetail"
-        tools:text="PROGRAMACION" />
+        app:layout_constraintTop_toBottomOf="@+id/ivDetail" />
 
     <TextView
         android:id="@+id/tvBody"
@@ -43,7 +43,6 @@
         android:layout_height="0dp"
         android:layout_margin="24dp"
         android:gravity="center"
-        android:text="PROGRAMACION"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
