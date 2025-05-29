@@ -30,11 +30,11 @@ class LuckFragment : Fragment() {
     private var _binding: FragmentLuckBinding? = null
     private val binding get() = _binding!!
 
-    @Inject lateinit var randomCardProvider: RandomCardProvider
+    @Inject
+    lateinit var randomCardProvider: RandomCardProvider
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         initUI()
     }
 
@@ -50,24 +50,24 @@ class LuckFragment : Fragment() {
             val currentPrediction = getString(luck.text)
             binding.tvLucky.text = currentPrediction
             binding.ivLuckyCard.setImageResource(luck.image)
-            binding.tvShare.setOnClickListener{ shareResult(currentPrediction) }
+            binding.tvShare.setOnClickListener { shareResult(currentPrediction) }
         }
     }
 
-    private fun shareResult(prediction:String) {
-        val sendIntent:Intent = Intent().apply {
+    private fun shareResult(prediction: String) {
+        val sendIntent: Intent = Intent().apply {
             action = Intent.ACTION_SEND
             putExtra(Intent.EXTRA_TEXT, prediction)
             type = "text/plain"
         }
-        val shareIntent =Intent.createChooser(sendIntent, null)
+        val shareIntent = Intent.createChooser(sendIntent, null)
         startActivity(shareIntent)
     }
 
     @SuppressLint("ClickableViewAccessibility")
     private fun initListeners() {
 
-        binding.ivRoulette.setOnTouchListener(object : OnSwipeTouchListener(requireContext()){
+        binding.ivRoulette.setOnTouchListener(object : OnSwipeTouchListener(requireContext()) {
 
             override fun onSwipeRight() {
                 spinRoulette()
@@ -113,7 +113,7 @@ class LuckFragment : Fragment() {
     private fun growCard() {
         val growAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.grow)
 
-        growAnimation.setAnimationListener(object : Animation.AnimationListener{
+        growAnimation.setAnimationListener(object : Animation.AnimationListener {
             override fun onAnimationStart(animation: Animation?) {}
 
             override fun onAnimationEnd(animation: Animation?) {
@@ -134,7 +134,7 @@ class LuckFragment : Fragment() {
         val appearAnimation = AlphaAnimation(0.0f, 1.0f)
         appearAnimation.duration = 1000
 
-        disappearAnimation.setAnimationListener(object : Animation.AnimationListener{
+        disappearAnimation.setAnimationListener(object : Animation.AnimationListener {
             override fun onAnimationStart(animation: Animation?) {}
 
             override fun onAnimationEnd(animation: Animation?) {
